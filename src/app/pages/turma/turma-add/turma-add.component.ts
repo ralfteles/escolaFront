@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EscolaServiceService } from 'src/app/services/escola-service.service';
 import { TurmaServiceService } from 'src/app/services/turma-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-turma-add',
@@ -39,11 +40,29 @@ export class TurmaAddComponent implements OnInit {
     this.formTurma.value.escolaId = this.escolaId;
     this.turmaService.addTurma(this.formTurma.value).subscribe(
       (res: any) => {
+        this.msgSucesso(res.mensagem);
         this.formTurma.reset(); 
         console.log(res.mensagem)
       }, 
-      (error) => { }
+      (error) => {
+        this.msgErro(error.error);
+       }
     );
+  }
+
+  
+  msgSucesso(msg: string){
+    Swal.fire({
+      icon: 'success',
+      title: msg
+    })
+  }
+
+  msgErro(msg: string){
+    Swal.fire({
+      icon: 'error',
+      title: msg
+    })
   }
 
 }
