@@ -1,0 +1,23 @@
+  <div class="container centerDiv">
+    <button class="btn btn-primary" routerLink="/turmaAdd/{{escolaId}}">Adicionar Turma</button>
+  
+    <h2 class="text-center">Turmas</h2>
+    <table class="table" style="margin-top: 10px;">
+      <thead>
+        <tr>
+          <th scope="col">Turmas</th>
+          <th scope="col">Vagas disponíveis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let turma of turmas">
+          <td>{{turma.nome}}</td>
+          <td>{{turma.vagas}}</td>
+        </tr>
+        <div class="text-center" *ngIf="this.turmas.length == 0">
+            Não há turmas cadastradas 
+        </div>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,14 @@
+<div class="container centerDiv">
+  <h2 class="text-center">Adicionar Escola</h2>
+
+  <form [formGroup]="formEscola">
+    <div class="form-group">
+      <label>Escola</label>
+      <input type="text" class="form-control" formControlName="descricao">
+
+    </div>
+    <button class="btn btn-primary" [disabled]="!formEscola.valid" (click)="adicionarEscola()">
+        Adicionar
+    </button>
+  </form> 
+</div>
