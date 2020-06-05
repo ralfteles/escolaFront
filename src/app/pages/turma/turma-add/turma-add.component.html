@@ -1,0 +1,18 @@
+<div class="container centerDiv">
+    <h2 class="text-center">Adicionar Turma</h2>
+  
+    <form [formGroup]="formTurma">
+      <div class="form-group">
+        <label>Turma</label>
+        <input type="text" class="form-control" formControlName="nome">  
+      </div>
+      <div class="form-group">
+        <label>Vagas disponíveis</label>
+        <input type="number" class="form-control" formControlName="vagas">  
+      </div>
+      <button class="btn btn-primary" [disabled]="!formTurma.valid" (click)="adicionarTurma()">
+          Adicionar
+      </button>
+    </form> 
+  </div>
+  

@@ -3,19 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EscolaComponent } from './escola/escola/escola.component';
-import { TurmaComponent } from './turma/turma/turma.component';
-import { TurmaAddComponent } from './turma/turma-add/turma-add.component';
-import { EscolaAddComponent } from './escola/escola-add/escola-add.component';
 import { EscolaServiceService } from './services/escola-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { EscolaListComponent } from './pages/escola/escolaList/escolaList.component';
+import { TurmaListComponent } from './pages/turma/turmaList/turmaList.component';
+import { TurmaAddComponent } from './pages/turma/turma-add/turma-add.component';
+import { EscolaAddComponent } from './pages/escola/escola-add/escola-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EscolaComponent,
-    TurmaComponent,
+    EscolaListComponent,
+    TurmaListComponent,
     TurmaAddComponent,
     EscolaAddComponent,
 
